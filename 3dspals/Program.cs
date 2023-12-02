@@ -254,6 +254,7 @@ namespace _3dspals
                 Console.WriteLine("j");
                 Console.ResetColor();
             }
+            // removed backup and restore cuzz uh its very bad because c# sux for restores and backups
             Get();
         }
         public static void Main(string[] args)
