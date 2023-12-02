@@ -20,6 +20,7 @@ namespace _3dspals
     internal class Program
     {
         public static string sd_card = Directory.GetCurrentDirectory();
+        public static string version = "1.0";
         public static void Get()
         {
             var run = Console.ReadLine();
@@ -259,6 +260,7 @@ namespace _3dspals
         }
         public static void Main(string[] args)
         {
+            Thread.Sleep(1000);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("██████  ██████  ███████ ██████   █████  ██      ");
             Console.WriteLine("     ██ ██   ██ ██      ██   ██ ██   ██ ██      ");
@@ -269,6 +271,30 @@ namespace _3dspals
             Console.WriteLine("");
             Console.WriteLine("Written and Created by ndsboy87 of 3DS Tools.");
             Console.WriteLine("https://github.com/3DSTools/3DSPal");
+            Console.WriteLine("");
+            using (WebClient client = new WebClient())
+            {
+                string clientVersion = version;
+                string onlineVersion = client.DownloadString("https://raw.githubusercontent.com/3DSTools/3DSPal/master/3dspals/version.txt");
+                if(clientVersion == onlineVersion)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Your 3DSPal is updated!");
+                    Console.ResetColor();
+                    Console.WriteLine("");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Your 3DSPal is outdated, get the current version ASAP.");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Client Version: " + clientVersion + " New Version: " + onlineVersion);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Download from: https://github.com/3DSTools/3DSPal");
+                    Console.ResetColor();
+                    Console.WriteLine("");
+                }
+            }
             Get();
         }
     }
