@@ -1,4 +1,4 @@
-![3DS Tools](https://files.catbox.moe/osrr82.png)
+![3DS Tools](https://files.catbox.moe/8x0evs.png)<br>
 3DSPal created by 3DSTools team. (ndsboy87)<br>Nintendo, I understand if you want a takedown, but these aren't my games and other stuff, go to Credits.<br>2DS basically can support some of these.<br>DS can't.<br>2DSPal and DSPal may be next versions?
 # 3DSPal
 A command-line tool that uses commands for 3DS Mod Installation.
@@ -35,3 +35,4 @@ Test command:
 ```txt
 wafkee
 ```
+Docs in development.
